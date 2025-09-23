@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route, Routes, Link as RouterLink } from 'reac
 import { ChakraProvider, Box, Flex, Heading, Link, Badge } from '@chakra-ui/react';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
-import AdminPage from './pages/AdminPage'; 
-import AddProductPage from './pages/AddProductPage'; 
+import AdminPage from './pages/AdminPage';
+import AddProductPage from './pages/AddProductPage';
 import EditProductPage from './pages/EditProductPage';
 import PaymentPage from './pages/PaymentPage';
+import AdminOrdersPage from './pages/AdminOrdersPage';
+import OrderHistoryPage from './pages/OrderHistoryPage';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
   // ... (suas funções handleAddToCart, etc. continuam aqui)
-const handleAddToCart = (productToAdd) => {
+  const handleAddToCart = (productToAdd) => {
     setCartItems(currentItems => {
       // Verifica se o produto já está no carrinho
       const isItemInCart = currentItems.find(item => item.id === productToAdd.id);
@@ -69,6 +71,9 @@ const handleAddToCart = (productToAdd) => {
               <Link as={RouterLink} to="/">All Commerce</Link>
             </Heading>
             <Flex align="center" gap={4}>
+              <Link as={RouterLink} to="/meus-pedidos">
+                Meus Pedidos
+              </Link>
               <Link as={RouterLink} to="/cart" position="relative">
                 Carrinho
                 {cartItems.length > 0 && (
@@ -92,8 +97,8 @@ const handleAddToCart = (productToAdd) => {
                 path="/cart"
                 element={<CartPage cartItems={cartItems} onAddToCart={handleAddToCart} onRemoveFromCart={handleRemoveFromCart} onClearCart={handleClearCart} />}
               />
-
-              {/* Novas Rotas Administrativas */}
+              <Route path="/meus-pedidos" element={<OrderHistoryPage />} />
+              <Route path="/admin/orders" element={<AdminOrdersPage />} />
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/admin/add" element={<AddProductPage />} />
               <Route path="/admin/edit/:productId" element={<EditProductPage />} />

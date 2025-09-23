@@ -5,6 +5,7 @@
       "name": "Bolsa de Couro Elegante",
       "price": 299.9,
       "category": "Acessórios",
+      "type": "physical",
       "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
       "image": "https://via.placeholder.com/400x400.png?text=Bolsa+de+Couro"
     },
@@ -13,6 +14,7 @@
       "name": "Headphone Bluetooth 5.2",
       "price": 349.99,
       "category": "Eletrônicos",
+      "type": "physical",
       "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
       "image": "https://via.placeholder.com/400x400.png?text=Headphone"
     },
@@ -21,6 +23,7 @@
       "name": "Livro: A Arte da Programação",
       "price": 89.9,
       "category": "Livros",
+      "type": "physical",
       "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
       "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o"
     },
@@ -28,6 +31,7 @@
       "name": "Kit Bic",
       "price": 23,
       "category": "Material de Escritório",
+      "type": "physical",
       "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
       "stock": 30,
       "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
@@ -38,6 +42,7 @@
       "name": "Tênis de Corrida Ultra Leve",
       "price": 499,
       "category": "Roupas",
+      "type": "physical",
       "description": "Tênis com tecnologia de amortecimento avançada, ideal para treinos longos e competições.",
       "image": "https://via.placeholder.com/400x400.png?text=T%C3%AAnis+Corrida"
     },
@@ -46,6 +51,7 @@
       "name": "Cafeteira Elétrica Express",
       "price": 249.9,
       "category": "Casa e Cozinha",
+      "type": "physical",
       "description": "Prepara até 30 xícaras de café, com filtro permanente e sistema corta-pingos.",
       "image": "https://via.placeholder.com/400x400.png?text=Cafeteira"
     },
@@ -54,6 +60,7 @@
       "name": "Smartwatch Vitality 3",
       "price": 799,
       "category": "Eletrônicos",
+      "type": "physical",
       "description": "Monitore sua saúde com acompanhamento de batimentos cardíacos, SpO2, sono e mais de 100 modos de esporte.",
       "image": "https://via.placeholder.com/400x400.png?text=Smartwatch"
     },
@@ -62,6 +69,7 @@
       "name": "Ficção Científica Clássica",
       "price": 59.9,
       "category": "Livros",
+      "type": "physical",
       "description": "Coletânea com os melhores contos de ficção científica do século XX. Edição de colecionador.",
       "image": "https://via.placeholder.com/400x400.png?text=Livro+Fic%C3%A7%C3%A3o"
     },
@@ -70,6 +78,7 @@
       "name": "Mochila Executiva para Notebook",
       "price": 220,
       "category": "Acessórios",
+      "type": "physical",
       "description": "Compartimento acolchoado para notebooks de até 15.6 polegadas, resistente à água e com portas USB.",
       "image": "https://via.placeholder.com/400x400.png?text=Mochila"
     },
@@ -78,9 +87,127 @@
       "name": "Iphone",
       "price": 4.22,
       "category": "Smartphone",
+      "type": "physical",
       "description": "Phone 16 Apple (128GB) Preto, Tela de 6,1, 5G e Câmera de 48MP",
       "stock": 2,
       "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto"
+    },
+    {
+      "id": 4,
+      "name": "Compiladores: Princípios, Técnicas e Ferramentas",
+      "price": 89.9,
+      "category": "Livros",
+      "stock": 100,
+      "type": "digital",
+      "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "description": "Um guia completo sobre compiladores",
+      "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
+    },
+    {
+      "id": 203,
+      "name": "Harry Potter e o Prisioneiro de Azkaban",
+      "price": 89.9,
+      "category": "Livros",
+      "stock": 100,
+      "type": "digital",
+      "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "description": "Terceiro livro de uma das sagas mais famosas do mundo. Embarque nesse mundo mágico, mas muito cuidado ao alterar a linha do tempo",
+      "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1758662660042,
+      "date": "2025-09-23T21:24:20.042Z",
+      "items": [
+        {
+          "id": "2",
+          "name": "Headphone Bluetooth 5.2",
+          "price": 349.99,
+          "category": "Eletrônicos",
+          "type": "physical",
+          "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+          "image": "https://via.placeholder.com/400x400.png?text=Headphone",
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "name": "Livro: A Arte da Programação",
+          "price": 89.9,
+          "category": "Livros",
+          "type": "physical",
+          "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
+          "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o",
+          "quantity": 1
+        },
+        {
+          "name": "Kit Bic",
+          "price": 23,
+          "category": "Material de Escritório",
+          "type": "physical",
+          "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
+          "stock": 30,
+          "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
+          "id": "5",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "Bolsa de Couro Elegante",
+          "price": 299.9,
+          "category": "Acessórios",
+          "type": "physical",
+          "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
+          "image": "https://via.placeholder.com/400x400.png?text=Bolsa+de+Couro",
+          "quantity": 1
+        }
+      ],
+      "total": 825.9295,
+      "status": "Processando"
+    },
+    {
+      "id": 1758665010811,
+      "date": "2025-09-23T22:03:30.811Z",
+      "items": [
+        {
+          "id": 4,
+          "name": "Compiladores: Princípios, Técnicas e Ferramentas",
+          "price": 89.9,
+          "category": "Livros",
+          "stock": 100,
+          "type": "digital",
+          "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+          "description": "Um guia completo sobre compiladores",
+          "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o",
+          "quantity": 1
+        },
+        {
+          "id": 203,
+          "name": "Harry Potter e o Prisioneiro de Azkaban",
+          "price": 89.9,
+          "category": "Livros",
+          "stock": 100,
+          "type": "digital",
+          "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+          "description": "Terceiro livro de uma das sagas mais famosas do mundo. Embarque nesse mundo mágico, mas muito cuidado ao alterar a linha do tempo",
+          "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o",
+          "quantity": 1
+        },
+        {
+          "id": "0ad3",
+          "name": "Iphone",
+          "price": 4.22,
+          "category": "Smartphone",
+          "type": "physical",
+          "description": "Phone 16 Apple (128GB) Preto, Tela de 6,1, 5G e Câmera de 48MP",
+          "stock": 2,
+          "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto",
+          "quantity": 1
+        }
+      ],
+      "total": 218.221,
+      "shippingMethod": "Correios PAC",
+      "status": "Processando"
     }
   ]
 }
