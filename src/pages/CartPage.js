@@ -4,11 +4,14 @@ import {
   Input, InputGroup, InputRightElement, useToast
 } from '@chakra-ui/react';
 import { DeleteIcon, AddIcon, MinusIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
+
 
 const CartPage = ({ cartItems, onAddToCart, onRemoveFromCart, onClearCart }) => {
   const [cep, setCep] = useState('');
   const [shippingCost, setShippingCost] = useState(0);
   const toast = useToast();
+  const navigate = useNavigate(); 
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const taxRate = 0.05; // Imposto simulado de 5%
@@ -37,8 +40,7 @@ const CartPage = ({ cartItems, onAddToCart, onRemoveFromCart, onClearCart }) => 
   };
 
   const handleCheckout = () => {
-    alert(`(Simulação) Compra finalizada com sucesso! Total: R$ ${total.toFixed(2)}. Obrigado por comprar na All Commerce!`);
-    onClearCart();
+    navigate('/payment', { state: { total: total } });
   };
 
   if (cartItems.length === 0) {

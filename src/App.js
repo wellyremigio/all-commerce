@@ -6,6 +6,7 @@ import CartPage from './pages/CartPage';
 import AdminPage from './pages/AdminPage'; 
 import AddProductPage from './pages/AddProductPage'; 
 import EditProductPage from './pages/EditProductPage';
+import PaymentPage from './pages/PaymentPage';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -96,6 +97,7 @@ const handleAddToCart = (productToAdd) => {
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/admin/add" element={<AddProductPage />} />
               <Route path="/admin/edit/:productId" element={<EditProductPage />} />
+              <Route path="/payment" element={<PaymentPage onClearCart={handleClearCart} />} />
             </Routes>
           </Box>
         </Box>
