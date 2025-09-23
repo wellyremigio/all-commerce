@@ -11,15 +11,45 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   // ... (suas funções handleAddToCart, etc. continuam aqui)
-  const handleAddToCart = (productToAdd) => {
-    setCartItems(currentItems => [...currentItems, productToAdd]);
+const handleAddToCart = (productToAdd) => {
+    setCartItems(currentItems => {
+      // Verifica se o produto já está no carrinho
+      const isItemInCart = currentItems.find(item => item.id === productToAdd.id);
+
+      if (isItemInCart) {
+        // Se estiver, atualiza a quantidade
+        return currentItems.map(item =>
+          item.id === productToAdd.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // Se não estiver, adiciona com quantidade 1
+        return [...currentItems, { ...productToAdd, quantity: 1 }];
+      }
+    });
   };
+
   const handleRemoveFromCart = (productToRemove) => {
-    setCartItems(currentItems => currentItems.filter(item => item.id !== productToRemove.id));
+    setCartItems(currentItems =>
+      currentItems.flatMap(item => {
+        if (item.id === productToRemove.id) {
+          // Se a quantidade for maior que 1, apenas diminui
+          if (item.quantity > 1) {
+            return [{ ...item, quantity: item.quantity - 1 }];
+          }
+          // Se for 1, remove o item completamente
+          return [];
+        }
+        return [item];
+      })
+    );
   };
+
   const handleClearCart = () => {
     setCartItems([]);
   };
+
 
   return (
     <ChakraProvider>
@@ -59,7 +89,7 @@ function App() {
               <Route path="/" element={<HomePage onAddToCart={handleAddToCart} />} />
               <Route
                 path="/cart"
-                element={<CartPage cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} onClearCart={handleClearCart} />}
+                element={<CartPage cartItems={cartItems} onAddToCart={handleAddToCart} onRemoveFromCart={handleRemoveFromCart} onClearCart={handleClearCart} />}
               />
 
               {/* Novas Rotas Administrativas */}

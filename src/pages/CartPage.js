@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Box, Heading, Text, Button, VStack, HStack, IconButton, Stack // 'Divider' foi removido daqui
+  Box, Heading, Text, Button, VStack, HStack, Divider, IconButton, Stack,
+  Input, InputGroup, InputRightElement, useToast
 } from '@chakra-ui/react';
-import { DeleteIcon } from '@chakra-ui/icons';
+import { DeleteIcon, AddIcon, MinusIcon } from '@chakra-ui/icons';
 
-const CartPage = ({ cartItems, onRemoveFromCart, onClearCart }) => {
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+const CartPage = ({ cartItems, onAddToCart, onRemoveFromCart, onClearCart }) => {
+  const [cep, setCep] = useState('');
+  const [shippingCost, setShippingCost] = useState(0);
+  const toast = useToast();
+
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const taxRate = 0.05; // Imposto simulado de 5%
+  const taxes = subtotal * taxRate;
+  const total = subtotal + taxes + shippingCost;
+
+  const handleCalculateShipping = () => {
+    if (cep.replace('-', '').length === 8) {
+      setShippingCost(25.00);
+      toast({
+        title: 'Frete calculado.',
+        description: "Adicionamos o valor do frete ao seu total.",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: 'CEP inválido.',
+        description: "Por favor, digite um CEP com 8 dígitos.",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   const handleCheckout = () => {
-    alert(`Compra finalizada com sucesso! Total: R$ ${total.toFixed(2)}. Obrigado por comprar na All Commerce!`);
+    alert(`(Simulação) Compra finalizada com sucesso! Total: R$ ${total.toFixed(2)}. Obrigado por comprar na All Commerce!`);
     onClearCart();
   };
 
@@ -16,59 +45,77 @@ const CartPage = ({ cartItems, onRemoveFromCart, onClearCart }) => {
     return (
       <Box textAlign="center" py={10}>
         <Heading as="h2" size="lg">Seu carrinho está vazio.</Heading>
-        <Text mt={4}>Que tal adicionar alguns produtos?</Text>
       </Box>
     );
   }
 
   return (
     <Box maxW="800px" mx="auto">
-      <Heading as="h2" size="xl" mb={6}>
-        Seu Carrinho
-      </Heading>
-
+      <Heading as="h2" size="xl" mb={6}>Seu Carrinho</Heading>
       <VStack spacing={4} align="stretch" mb={8}>
-        {cartItems.map((item, index) => (
-          <HStack key={`${item.id}-${index}`} justify="space-between" p={4} borderWidth="1px" borderRadius="md">
-            <Text fontWeight="bold">{item.name}</Text>
+        {cartItems.map(item => (
+          <HStack key={item.id} justify="space-between" p={4} borderWidth="1px" borderRadius="md">
+            <VStack align="start">
+              <Text fontWeight="bold">{item.name}</Text>
+              <Text fontSize="sm" color="gray.600">R$ {item.price.toFixed(2)} / unidade</Text>
+            </VStack>
             <HStack>
-              <Text>R$ {item.price.toFixed(2)}</Text>
-              <IconButton
-                aria-label="Remover item"
-                icon={<DeleteIcon />}
-                colorScheme="red"
-                variant="ghost"
-                onClick={() => onRemoveFromCart(item)}
-              />
+              <IconButton size="sm" icon={<MinusIcon />} onClick={() => onRemoveFromCart(item)} aria-label="Diminuir quantidade" />
+              <Text fontWeight="bold" minW="20px" textAlign="center">{item.quantity}</Text>
+              <IconButton size="sm" icon={<AddIcon />} onClick={() => onAddToCart(item)} aria-label="Aumentar quantidade" />
             </HStack>
+            <Text fontWeight="bold">R$ {(item.price * item.quantity).toFixed(2)}</Text>
           </HStack>
         ))}
       </VStack>
 
-      {/* AQUI ESTÁ A SUBSTITUIÇÃO */}
-      <Box height="1px" bg="gray.200" my={4} />
+      <Divider />
 
-      <HStack justify="space-between" my={4}>
-        <Text fontSize="xl" fontWeight="bold">Total:</Text>
-        <Text fontSize="2xl" fontWeight="bold" color="teal.600">
-          R$ {total.toFixed(2)}
-        </Text>
-      </HStack>
+      {/* Seção de Frete */}
+      <Box my={6}>
+        <Heading as="h3" size="md" mb={2}>Calcular Frete</Heading>
+        <InputGroup size="md" maxW="300px">
+          <Input
+            placeholder="Digite seu CEP"
+            value={cep}
+            onChange={(e) => setCep(e.target.value)}
+          />
+          <InputRightElement width="4.5rem">
+            <Button h="1.75rem" size="sm" onClick={handleCalculateShipping}>
+              Calcular
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </Box>
 
+      {/* Resumo Financeiro */}
       <Box p={6} borderWidth="1px" borderRadius="md" mt={6}>
-        <Heading as="h3" size="lg" mb={4}>Simulação de Pagamento</Heading>
-        <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-          <Button colorScheme="blue" flex="1">Pagar com Cartão de Crédito</Button>
-          <Button colorScheme="green" flex="1">Pagar com PIX</Button>
-        </Stack>
+        <Heading as="h3" size="lg" mb={4}>Resumo do Pedido</Heading>
+        <VStack spacing={3} align="stretch">
+          <HStack justify="space-between">
+            <Text>Subtotal</Text>
+            <Text>R$ {subtotal.toFixed(2)}</Text>
+          </HStack>
+          <HStack justify="space-between">
+            <Text>Impostos ({(taxRate * 100).toFixed(0)}%)</Text>
+            <Text>R$ {taxes.toFixed(2)}</Text>
+          </HStack>
+          <HStack justify="space-between">
+            <Text>Frete</Text>
+            <Text>{shippingCost > 0 ? `R$ ${shippingCost.toFixed(2)}` : 'A calcular'}</Text>
+          </HStack>
+          <Divider my={2} />
+          <HStack justify="space-between">
+            <Text fontSize="xl" fontWeight="bold">Total</Text>
+            <Text fontSize="xl" fontWeight="bold" color="teal.600">R$ {total.toFixed(2)}</Text>
+          </HStack>
+        </VStack>
         <Button
-          colorScheme="teal"
-          size="lg"
-          width="100%"
-          mt={4}
+          colorScheme="teal" size="lg" width="100%" mt={6}
           onClick={handleCheckout}
+          isDisabled={shippingCost === 0}
         >
-          Finalizar Compra
+          {shippingCost > 0 ? 'Finalizar Compra' : 'Calcule o frete para continuar'}
         </Button>
       </Box>
     </Box>
