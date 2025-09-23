@@ -1,0 +1,100 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Box, Heading, FormControl, FormLabel, Input, Button, VStack, Textarea, NumberInput, NumberInputField, Spinner, Text
+} from '@chakra-ui/react';
+import { useNavigate, useParams } from 'react-router-dom';
+import api from '../services/api';
+
+const EditProductPage = () => {
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
+  const [stock, setStock] = useState(0);
+  const [image, setImage] = useState('');
+  const [loading, setLoading] = useState(true);
+  
+  const { productId } = useParams(); // Pega o ID da URL
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Busca os dados do produto para preencher o formulário
+    api.get(`/products/${productId}`)
+      .then(response => {
+        const product = response.data;
+        setName(product.name);
+        setPrice(product.price);
+        setCategory(product.category);
+        setDescription(product.description);
+        setStock(product.stock);
+        setImage(product.image);
+      })
+      .catch(error => console.error("Erro ao buscar produto:", error))
+      .finally(() => setLoading(false));
+  }, [productId]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const updatedProduct = {
+      name, price: parseFloat(price), category, description,
+      stock: parseInt(stock, 10), image
+    };
+
+    api.put(`/products/${productId}`, updatedProduct)
+      .then(() => {
+        alert('Produto atualizado com sucesso!');
+        navigate('/admin'); // Redireciona para a lista
+      })
+      .catch(error => {
+        console.error("Erro ao atualizar produto:", error);
+        alert('Ocorreu um erro ao atualizar o produto.');
+      });
+  };
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  return (
+    <Box maxW="600px" mx="auto">
+      <Heading as="h1" size="xl" mb={6}>Editar Produto (ID: {productId})</Heading>
+      <form onSubmit={handleSubmit}>
+        <VStack spacing={4}>
+          <FormControl isRequired>
+            <FormLabel>Nome do Produto</FormLabel>
+            <Input value={name} onChange={(e) => setName(e.target.value)} />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Categoria</FormLabel>
+            <Input value={category} onChange={(e) => setCategory(e.target.value)} />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Preço</FormLabel>
+            <NumberInput value={price} onChange={(valueString) => setPrice(valueString)}>
+              <NumberInputField />
+            </NumberInput>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Estoque</FormLabel>
+            <NumberInput value={stock} onChange={(valueString) => setStock(valueString)}>
+              <NumberInputField />
+            </NumberInput>
+          </FormControl>
+          <FormControl>
+            <FormLabel>URL da Imagem</FormLabel>
+            <Input value={image} onChange={(e) => setImage(e.target.value)} />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Descrição</FormLabel>
+            <Textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+          </FormControl>
+          <Button type="submit" colorScheme="teal" size="lg" width="full">
+            Salvar Alterações
+          </Button>
+        </VStack>
+      </form>
+    </Box>
+  );
+};
+
+export default EditProductPage;
