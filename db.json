@@ -93,7 +93,7 @@
       "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Compiladores: Princípios, Técnicas e Ferramentas",
       "price": 89.9,
       "category": "Livros",
@@ -104,7 +104,7 @@
       "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
     },
     {
-      "id": 203,
+      "id": "203",
       "name": "Harry Potter e o Prisioneiro de Azkaban",
       "price": 89.9,
       "category": "Livros",
@@ -113,11 +113,20 @@
       "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "description": "Terceiro livro de uma das sagas mais famosas do mundo. Embarque nesse mundo mágico, mas muito cuidado ao alterar a linha do tempo",
       "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
+    },
+    {
+      "id": "6d92",
+      "name": "Samsung Galaxy S24+",
+      "price": 4000,
+      "category": "Smartphone",
+      "description": "Telefone perdido no limbo do Correios",
+      "stock": 1,
+      "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto"
     }
   ],
   "orders": [
     {
-      "id": 1758662660042,
+      "id": "1758662660042",
       "date": "2025-09-23T21:24:20.042Z",
       "items": [
         {
@@ -166,7 +175,7 @@
       "status": "Processando"
     },
     {
-      "id": 1758665010811,
+      "id": "1758665010811",
       "date": "2025-09-23T22:03:30.811Z",
       "items": [
         {
@@ -206,6 +215,36 @@
         }
       ],
       "total": 218.221,
+      "shippingMethod": "Correios PAC",
+      "status": "Processando"
+    },
+    {
+      "id": 1758683567694,
+      "date": "2025-09-24T03:12:47.694Z",
+      "items": [
+        {
+          "id": "4",
+          "name": "Livro: A Arte da Programação",
+          "price": 89.9,
+          "category": "Livros",
+          "type": "physical",
+          "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
+          "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o",
+          "quantity": 1
+        },
+        {
+          "name": "Kit Bic",
+          "price": 23,
+          "category": "Material de Escritório",
+          "type": "physical",
+          "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
+          "stock": 30,
+          "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
+          "id": "5",
+          "quantity": 1
+        }
+      ],
+      "total": 143.54500000000002,
       "shippingMethod": "Correios PAC",
       "status": "Processando"
     }
