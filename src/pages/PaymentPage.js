@@ -18,18 +18,15 @@ const PaymentPage = ({ onClearCart }) => {
     const [isLoading, setIsLoading] = useState(false);
     const toast = useToast();
 
-    // Estados do formulário
     const [cardNumber, setCardNumber] = useState('');
     const [cardName, setCardName] = useState('');
     const [expiryMonth, setExpiryMonth] = useState('');
     const [expiryYear, setExpiryYear] = useState('');
     const [cvv, setCvv] = useState('');
     
-    // Lógica para o PIX Copia e Cola
     const pixKey = "00020126330014br.gov.bcb.pix0111123456789012...";
     const { hasCopied, onCopy } = useClipboard(pixKey);
 
-    // Funções de formatação do formulário
     const handleCardNumberChange = (e) => {
         const formatted = e.target.value.replace(/\D/g, '').slice(0, 16).replace(/(\d{4})/g, '$1 ').trim();
         setCardNumber(formatted);
@@ -53,13 +50,21 @@ const PaymentPage = ({ onClearCart }) => {
         event.preventDefault();
         setIsLoading(true);
 
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            toast({ title: 'Erro', description: 'Você precisa estar logado para finalizar a compra.', status: 'error' });
+            setIsLoading(false);
+            return;
+        }
+
         const newOrder = {
             id: String(new Date().getTime()),
             date: new Date().toISOString(),
             items: cartItems,
             total: total,
             shippingMethod: shippingMethod,
-            status: 'Processando'
+            status: 'Processando',
+            userEmail: user.email
         };
 
         try {
@@ -112,7 +117,6 @@ const PaymentPage = ({ onClearCart }) => {
             </Text>
 
             <Flex direction={{ base: 'column', md: 'row' }} gap={10}>
-                {/* Coluna Esquerda: Formulário de Pagamento */}
                 <Box flex="2" bg="white" p={8} borderRadius="lg" boxShadow="lg">
                     <Tabs isFitted variant="soft-rounded" colorScheme="blue">
                         <TabList mb="1em">
@@ -181,7 +185,6 @@ const PaymentPage = ({ onClearCart }) => {
                     </Tabs>
                 </Box>
 
-                {/* Coluna Direita: Resumo do Pedido */}
                 <Box flex="1" bg="blue.50" p={6} borderRadius="lg">
                     <Heading as="h3" size="lg" mb={4} color="blue.800">Resumo do Pedido</Heading>
                     <VStack spacing={3} align="stretch">

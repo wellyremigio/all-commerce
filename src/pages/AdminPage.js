@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import {
     Box, Heading, Button, Table, Thead, Tbody, Tr, Th, Td, TableContainer,
-    IconButton, HStack, Spinner, Text, Flex
+    IconButton, HStack, Spinner, Text, Flex, useDisclosure,
+    Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Icon
 } from '@chakra-ui/react';
 import { AddIcon, EditIcon, DeleteIcon } from '@chakra-ui/icons';
+import { FiArrowLeft } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 import api from '../services/api';
+import { logActivity } from '../services/logService'; // Importe o serviço de log
 
 const AdminPage = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [productToDelete, setProductToDelete] = useState(null);
 
     useEffect(() => {
         fetchProducts();
@@ -17,7 +22,7 @@ const AdminPage = () => {
 
     const fetchProducts = () => {
         setLoading(true);
-        api.get('/products')
+        api.get('/products?_sort=id&_order=desc')
             .then(response => {
                 setProducts(response.data);
             })
@@ -25,50 +30,61 @@ const AdminPage = () => {
             .finally(() => setLoading(false));
     };
 
-    // NOVA FUNÇÃO PARA DELETAR
-    const handleDelete = (id) => {
-        // Pede confirmação antes de excluir
-        if (window.confirm('Tem certeza que deseja excluir este produto?')) {
-            api.delete(`/products/${id}`)
+    const handleOpenDeleteModal = (product) => {
+        setProductToDelete(product);
+        onOpen();
+    };
+
+    const handleDelete = () => {
+        if (productToDelete) {
+            api.delete(`/products/${productToDelete.id}`)
                 .then(() => {
-                    alert('Produto excluído com sucesso!');
-                    fetchProducts(); // Atualiza a lista de produtos
+                    // Registra a atividade de exclusão
+                    logActivity(`Produto "${productToDelete.name}" (ID: ${productToDelete.id}) foi excluído.`);
+                    fetchProducts();
                 })
                 .catch(error => {
                     console.error("Erro ao excluir produto:", error);
-                    alert('Ocorreu um erro ao excluir o produto.');
+                })
+                .finally(() => {
+                    onClose();
+                    setProductToDelete(null);
                 });
         }
     };
 
     if (loading) {
         return (
-            <Box textAlign="center">
-                <Spinner size="xl" />
-                <Text mt={4}>Carregando produtos...</Text>
-            </Box>
+            <Flex justify="center" align="center" height="60vh">
+                <Spinner size="xl" color="blue.500" />
+            </Flex>
         );
     }
 
     return (
         <Box>
             <Flex justify="space-between" align="center" mb={6}>
-                <Heading as="h1" size="xl">Gerenciar Produtos</Heading>
                 <HStack>
-                    <Button as={RouterLink} to="/admin/orders" colorScheme="blue">
-                        Ver Pedidos
-                    </Button>
-                    <Button
+                    <IconButton
                         as={RouterLink}
-                        to="/admin/add"
-                        colorScheme="teal"
-                        leftIcon={<AddIcon />}
-                    >
-                        Adicionar Produto
-                    </Button>
+                        to="/admin"
+                        icon={<Icon as={FiArrowLeft} />}
+                        aria-label="Voltar ao painel"
+                        variant="ghost"
+                    />
+                    <Heading as="h1" size="xl" color="blue.800">Gerenciar Produtos</Heading>
                 </HStack>
+                <Button
+                    as={RouterLink}
+                    to="/admin/products/add"
+                    colorScheme="blue"
+                    leftIcon={<AddIcon />}
+                >
+                    Adicionar Produto
+                </Button>
             </Flex>
-            <TableContainer>
+
+            <TableContainer bg="white" borderRadius="lg" boxShadow="lg">
                 <Table variant="simple">
                     <Thead>
                         <Tr>
@@ -82,11 +98,11 @@ const AdminPage = () => {
                     </Thead>
                     <Tbody>
                         {products.map(product => (
-                            <Tr key={product.id}>
+                            <Tr key={product.id} _hover={{ bg: 'gray.50' }}>
                                 <Td>{product.id}</Td>
-                                <Td>{product.name}</Td>
+                                <Td fontWeight="medium">{product.name}</Td>
                                 <Td>{product.category}</Td>
-                                <Td isNumeric>R$ {product.price.toFixed(2)}</Td>
+                                <Td isNumeric>R$ {parseFloat(product.price).toFixed(2)}</Td>
                                 <Td isNumeric>{product.stock}</Td>
                                 <Td>
                                     <HStack spacing={2}>
@@ -94,14 +110,16 @@ const AdminPage = () => {
                                             aria-label="Editar produto"
                                             icon={<EditIcon />}
                                             colorScheme="blue"
+                                            variant="ghost"
                                             as={RouterLink}
-                                            to={`/admin/edit/${product.id}`}
+                                            to={`/admin/products/edit/${product.id}`}
                                         />
                                         <IconButton
                                             aria-label="Excluir produto"
                                             icon={<DeleteIcon />}
                                             colorScheme="red"
-                                            onClick={() => handleDelete(product.id)}
+                                            variant="ghost"
+                                            onClick={() => handleOpenDeleteModal(product)}
                                         />
                                     </HStack>
                                 </Td>
@@ -110,8 +128,29 @@ const AdminPage = () => {
                     </Tbody>
                 </Table>
             </TableContainer>
+
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Confirmar Exclusão</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <Text>Tem certeza que deseja excluir o produto?</Text>
+                        <Text fontWeight="bold" mt={2}>{productToDelete?.name}</Text>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button variant="ghost" mr={3} onClick={onClose}>
+                            Cancelar
+                        </Button>
+                        <Button colorScheme="red" onClick={handleDelete}>
+                            Excluir
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </Box>
     );
 };
 
 export default AdminPage;
+

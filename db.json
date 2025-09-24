@@ -1,4 +1,24 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@allcommerce.com",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "email": "cliente@email.com",
+      "password": "123",
+      "role": "customer"
+    },
+    {
+      "id": "f444",
+      "email": "usuario1@gmail.com",
+      "password": "user123",
+      "role": "customer"
+    }
+  ],
   "products": [
     {
       "id": "1",
@@ -7,7 +27,7 @@
       "category": "Acessórios",
       "type": "physical",
       "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
-      "image": "https://via.placeholder.com/400x400.png?text=Bolsa+de+Couro"
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb6e0e5c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "2",
@@ -16,7 +36,8 @@
       "category": "Eletrônicos",
       "type": "physical",
       "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
-      "image": "https://via.placeholder.com/400x400.png?text=Headphone"
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "stock": -1
     },
     {
       "id": "4",
@@ -25,17 +46,17 @@
       "category": "Livros",
       "type": "physical",
       "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
-      "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o"
+      "image": "https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
-      "name": "Kit Bic",
+      "id": "5",
+      "name": "Kit de Canetas Coloridas",
       "price": 23,
       "category": "Material de Escritório",
       "type": "physical",
       "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
       "stock": 30,
-      "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
-      "id": "5"
+      "image": "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "6",
@@ -44,7 +65,7 @@
       "category": "Roupas",
       "type": "physical",
       "description": "Tênis com tecnologia de amortecimento avançada, ideal para treinos longos e competições.",
-      "image": "https://via.placeholder.com/400x400.png?text=T%C3%AAnis+Corrida"
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "7",
@@ -53,7 +74,7 @@
       "category": "Casa e Cozinha",
       "type": "physical",
       "description": "Prepara até 30 xícaras de café, com filtro permanente e sistema corta-pingos.",
-      "image": "https://via.placeholder.com/400x400.png?text=Cafeteira"
+      "image": "https://images.unsplash.com/photo-1511920183353-3c9c9b04a299?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "8",
@@ -62,7 +83,7 @@
       "category": "Eletrônicos",
       "type": "physical",
       "description": "Monitore sua saúde com acompanhamento de batimentos cardíacos, SpO2, sono e mais de 100 modos de esporte.",
-      "image": "https://via.placeholder.com/400x400.png?text=Smartwatch"
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "9",
@@ -71,7 +92,7 @@
       "category": "Livros",
       "type": "physical",
       "description": "Coletânea com os melhores contos de ficção científica do século XX. Edição de colecionador.",
-      "image": "https://via.placeholder.com/400x400.png?text=Livro+Fic%C3%A7%C3%A3o"
+      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "10",
@@ -80,28 +101,28 @@
       "category": "Acessórios",
       "type": "physical",
       "description": "Compartimento acolchoado para notebooks de até 15.6 polegadas, resistente à água e com portas USB.",
-      "image": "https://via.placeholder.com/400x400.png?text=Mochila"
+      "image": "https://images.unsplash.com/photo-1587353112359-a0315a975775?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "0ad3",
-      "name": "Iphone",
-      "price": 4.22,
+      "name": "Smartphone Moderno",
+      "price": 4220,
       "category": "Smartphone",
       "type": "physical",
-      "description": "Phone 16 Apple (128GB) Preto, Tela de 6,1, 5G e Câmera de 48MP",
+      "description": "Smartphone com tela de 6,1, 5G e Câmera de 48MP.",
       "stock": 2,
-      "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto"
+      "image": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
-      "id": "4",
-      "name": "Compiladores: Princípios, Técnicas e Ferramentas",
+      "id": "11",
+      "name": "Compiladores: Princípios e Técnicas",
       "price": 89.9,
       "category": "Livros",
       "stock": 100,
       "type": "digital",
       "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "description": "Um guia completo sobre compiladores",
-      "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
+      "image": "https://images.unsplash.com/photo-1524995767968-7b2a5957b182?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "203",
@@ -111,23 +132,23 @@
       "stock": 100,
       "type": "digital",
       "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "description": "Terceiro livro de uma das sagas mais famosas do mundo. Embarque nesse mundo mágico, mas muito cuidado ao alterar a linha do tempo",
-      "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o"
+      "description": "Terceiro livro de uma das sagas mais famosas do mundo.",
+      "image": "https://images.unsplash.com/photo-1610466024868-c112b9799282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "6d92",
       "name": "Samsung Galaxy S24+",
       "price": 4000,
       "category": "Smartphone",
-      "description": "Telefone perdido no limbo do Correios",
+      "description": "Smartphone de última geração com câmera tripla e tela infinita.",
       "stock": 1,
-      "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto"
+      "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     }
   ],
   "orders": [
     {
-      "id": "1758662660042",
-      "date": "2025-09-23T21:24:20.042Z",
+      "id": "1758742975282",
+      "date": "2025-09-24T19:42:55.282Z",
       "items": [
         {
           "id": "2",
@@ -136,117 +157,35 @@
           "category": "Eletrônicos",
           "type": "physical",
           "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
-          "image": "https://via.placeholder.com/400x400.png?text=Headphone",
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "name": "Livro: A Arte da Programação",
-          "price": 89.9,
-          "category": "Livros",
-          "type": "physical",
-          "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
-          "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o",
-          "quantity": 1
-        },
-        {
-          "name": "Kit Bic",
-          "price": 23,
-          "category": "Material de Escritório",
-          "type": "physical",
-          "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
-          "stock": 30,
-          "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
-          "id": "5",
-          "quantity": 1
-        },
-        {
-          "id": "1",
-          "name": "Bolsa de Couro Elegante",
-          "price": 299.9,
-          "category": "Acessórios",
-          "type": "physical",
-          "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
-          "image": "https://via.placeholder.com/400x400.png?text=Bolsa+de+Couro",
+          "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
           "quantity": 1
         }
       ],
-      "total": 825.9295,
-      "status": "Processando"
-    },
-    {
-      "id": "1758665010811",
-      "date": "2025-09-23T22:03:30.811Z",
-      "items": [
-        {
-          "id": 4,
-          "name": "Compiladores: Princípios, Técnicas e Ferramentas",
-          "price": 89.9,
-          "category": "Livros",
-          "stock": 100,
-          "type": "digital",
-          "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-          "description": "Um guia completo sobre compiladores",
-          "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o",
-          "quantity": 1
-        },
-        {
-          "id": 203,
-          "name": "Harry Potter e o Prisioneiro de Azkaban",
-          "price": 89.9,
-          "category": "Livros",
-          "stock": 100,
-          "type": "digital",
-          "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-          "description": "Terceiro livro de uma das sagas mais famosas do mundo. Embarque nesse mundo mágico, mas muito cuidado ao alterar a linha do tempo",
-          "image": "https://via.placeholder.com/400x400.png?text=E-book+Programa%C3%A7%C3%A3o",
-          "quantity": 1
-        },
-        {
-          "id": "0ad3",
-          "name": "Iphone",
-          "price": 4.22,
-          "category": "Smartphone",
-          "type": "physical",
-          "description": "Phone 16 Apple (128GB) Preto, Tela de 6,1, 5G e Câmera de 48MP",
-          "stock": 2,
-          "image": "https://via.placeholder.com/400x400.png?text=Novo+Produto",
-          "quantity": 1
-        }
-      ],
-      "total": 218.221,
+      "total": 392.4895,
       "shippingMethod": "Correios PAC",
       "status": "Processando"
     },
     {
-      "id": 1758683567694,
-      "date": "2025-09-24T03:12:47.694Z",
+      "id": "1758743103805",
+      "date": "2025-09-24T19:45:03.805Z",
       "items": [
         {
-          "id": "4",
-          "name": "Livro: A Arte da Programação",
-          "price": 89.9,
-          "category": "Livros",
+          "id": "2",
+          "name": "Headphone Bluetooth 5.2",
+          "price": 349.99,
+          "category": "Eletrônicos",
           "type": "physical",
-          "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
-          "image": "https://via.placeholder.com/400x400.png?text=Livro+Programa%C3%A7%C3%A3o",
-          "quantity": 1
-        },
-        {
-          "name": "Kit Bic",
-          "price": 23,
-          "category": "Material de Escritório",
-          "type": "physical",
-          "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
-          "stock": 30,
-          "image": "https://via.placeholder.com/400x400.png?text=Kit+Canetas",
-          "id": "5",
+          "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+          "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          "stock": null,
           "quantity": 1
         }
       ],
-      "total": 143.54500000000002,
+      "total": 392.4895,
       "shippingMethod": "Correios PAC",
-      "status": "Processando"
+      "status": "Processando",
+      "userEmail": "usuario1@gmail.com"
     }
-  ]
+  ],
+  "logs": []
 }

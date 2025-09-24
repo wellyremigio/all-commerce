@@ -1,76 +1,98 @@
-// src/pages/OrderHistoryPage.js
-
 import React, { useState, useEffect } from 'react';
-import { Box, Heading, Text, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Button, HStack, Tag, VStack, Divider } from '@chakra-ui/react';
+import {
+    Box, Heading, Text, Button, VStack, HStack, Tag,
+    Flex, Image, Divider, Icon, Container, Spinner
+} from '@chakra-ui/react';
+import { FiPackage } from 'react-icons/fi';
+import { Link as RouterLink } from 'react-router-dom';
 
 const OrderHistoryPage = () => {
-    const [history, setHistory] = useState([]);
+    const [orders, setOrders]
+
+        = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const localHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
-        setHistory(localHistory.sort((a, b) => new Date(b.date) - new Date(a.date)));
+        const loggedInUser = JSON.parse(localStorage.getItem('user'));
+        if (loggedInUser) {
+            setUser(loggedInUser);
+            const localHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+            const userOrders = localHistory.filter(order => order.userEmail === loggedInUser.email);
+            setOrders(userOrders.sort((a, b) => new Date(b.date) - new Date(a.date)));
+        }
+        setLoading(false);
     }, []);
 
-    if (history.length === 0) {
+    if (loading) {
+        return <Flex justify="center" align="center" height="60vh"><Spinner size="xl" /></Flex>;
+    }
+
+    if (orders.length === 0) {
         return (
-            <Box textAlign="center">
-                <Heading as="h1" size="xl" mb={6}>Meus Pedidos</Heading>
-                <Text>Você ainda não fez nenhum pedido.</Text>
-            </Box>
+            <Container textAlign="center" py={20}>
+                <Icon as={FiPackage} w={16} h={16} color="blue.300" />
+                <Heading as="h2" size="lg" mt={6} mb={2}>Nenhum pedido encontrado</Heading>
+                <Text color={'gray.500'}>
+                    Você ainda não fez nenhuma compra. Que tal explorar nossos produtos?
+                </Text>
+                <Button as={RouterLink} to="/" colorScheme="blue" mt={6}>
+                    Ir para a Loja
+                </Button>
+            </Container>
         );
     }
 
+    const getStatusColorScheme = (status) => {
+        switch (status) {
+            case 'Processando': return 'yellow';
+            case 'Enviado': return 'blue';
+            case 'Concluído': return 'green';
+            default: return 'gray';
+        }
+    };
+
     return (
-        <Box>
-            <Heading as="h1" size="xl" mb={6}>Meus Pedidos</Heading>
-            <Accordion allowMultiple>
-                {history.map(order => (
-                    <AccordionItem key={order.id}>
-                        <h2>
-                            <AccordionButton>
-                                <Box flex="1" textAlign="left">
-                                    <Text fontWeight="bold">Pedido #{order.id} - {new Date(order.date).toLocaleString('pt-BR')}</Text>
-                                </Box>
-                                {/* TAG DE STATUS ADICIONADA AQUI */}
-                                <Tag colorScheme={order.status === 'Processando' ? 'yellow' : (order.status === 'Enviado' ? 'blue' : 'green')}>{order.status}</Tag>
-                                <AccordionIcon />
-                            </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4}>
-                            <Text fontWeight="bold" mb={2}>Itens:</Text>
-                            <VStack align="stretch" spacing={2}>
-                                {order.items.map(item => (
-                                    <HStack key={`${order.id}-${item.id}`} justify="space-between">
+        <Container maxW="container.lg" py={10}>
+            <Heading as="h1" size="xl" mb={8} color="blue.800">Meus Pedidos</Heading>
+            <VStack spacing={6} align="stretch">
+                {orders.map(order => (
+                    <Box key={order.id} bg="white" p={6} borderRadius="lg" boxShadow="md">
+                        <Flex justify="space-between" align="center" mb={4}>
+                            <Box>
+                                <Heading size="md">Pedido #{order.id}</Heading>
+                                <Text fontSize="sm" color="gray.500">
+                                    Realizado em: {new Date(order.date).toLocaleDateString('pt-BR')}
+                                </Text>
+                            </Box>
+                            <Tag colorScheme={getStatusColorScheme(order.status)} size="lg">{order.status}</Tag>
+                        </Flex>
+                        <Divider />
+                        <VStack spacing={4} align="stretch" mt={4}>
+                            {order.items.map(item => (
+                                <HStack key={item.id} spacing={4}>
+                                    <Image src={item.image} boxSize="60px" objectFit="cover" borderRadius="md" />
+                                    <Flex justify="space-between" w="full">
                                         <Box>
-                                            <Text>{item.name} (x{item.quantity})</Text>
-                                            {item.type === 'digital' && (
-                                                <Button
-                                                    as="a"
-                                                    href={item.downloadLink}
-                                                    target="_blank"
-                                                    size="xs"
-                                                    colorScheme="green"
-                                                    mt={1}
-                                                >
-                                                    Baixar Agora
-                                                </Button>
-                                            )}
+                                            <Text fontWeight="medium">{item.name}</Text>
+                                            <Text fontSize="sm" color="gray.500">Qtd: {item.quantity}</Text>
                                         </Box>
-                                        <Text>R$ {(item.price * item.quantity).toFixed(2)}</Text>
-                                    </HStack>
-                                ))}
-                            </VStack>
-                            <Divider my={3} />
-                            <HStack justify="space-between" fontWeight="bold">
-                                <Text>Total do Pedido:</Text>
-                                <Text>R$ {order.total.toFixed(2)}</Text>
-                            </HStack>
-                        </AccordionPanel>
-                    </AccordionItem>
+                                        <Text fontWeight="medium">R$ {(item.price * item.quantity).toFixed(2)}</Text>
+                                    </Flex>
+                                </HStack>
+                            ))}
+                        </VStack>
+                        <Divider my={4} />
+                        <HStack justify="space-between">
+                            <Text fontSize="lg" fontWeight="bold" color="blue.800">Total do Pedido:</Text>
+                            <Text fontSize="lg" fontWeight="bold" color="blue.800">R$ {order.total.toFixed(2)}</Text>
+                        </HStack>
+                    </Box>
                 ))}
-            </Accordion>
-        </Box>
+            </VStack>
+        </Container>
     );
 };
 
 export default OrderHistoryPage;
+
