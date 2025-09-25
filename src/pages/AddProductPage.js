@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Box, Heading, FormControl, FormLabel, Input, Button, VStack, Textarea, NumberInput, NumberInputField
 } from '@chakra-ui/react';
@@ -28,7 +28,7 @@ const AddProductPage = () => {
     api.post('/products', newProduct)
       .then(() => {
         alert('Produto cadastrado com sucesso!');
-        navigate('/admin'); // Redireciona para a lista de produtos
+        navigate('/admin'); 
       })
       .catch(error => {
         console.error("Erro ao cadastrar produto:", error);

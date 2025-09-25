@@ -1,13 +1,11 @@
-// src/pages/EditProductPage.js
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, FormControl, FormLabel, Input, Button, VStack, Textarea,
     NumberInput, NumberInputField, Spinner, Flex, Container, HStack, Icon,
     InputGroup, InputLeftElement, useToast
 } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FiTag, FiGrid, FiDollarSign, FiArchive, FiImage, FiFileText } from 'react-icons/fi';
+import { FiTag, FiGrid, FiDollarSign, FiArchive, FiImage } from 'react-icons/fi';
 import api from '../services/api';
 
 const EditProductPage = () => {

@@ -1,6 +1,4 @@
-// src/pages/ProductDetailPage.js
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import {
     Box, Heading, Text, Image, Button, Spinner, Flex, Badge, Icon,
@@ -84,8 +82,6 @@ const ProductDetailPage = ({ onAddToCart }) => {
                     <Badge colorScheme="blue" w="fit-content" mb={2}>{product.category}</Badge>
                     <Heading as="h1" size="2xl" mb={4}>{product.name}</Heading>
                     <Text fontSize="lg" color="gray.600" mb={6}>{product.description}</Text>
-                    
-                    {/* Exibe o estoque disponível */}
                     <Text mb={6} color={product.stock > 0 ? 'green.600' : 'red.600'}>
                         {product.stock > 0 ? `Estoque: ${product.stock} unidades` : 'Produto esgotado'}
                     </Text>
@@ -93,8 +89,6 @@ const ProductDetailPage = ({ onAddToCart }) => {
                     <Text fontWeight="bold" fontSize="4xl" color="blue.600" mb={8}>
                         R$ {parseFloat(product.price).toFixed(2).replace('.', ',')}
                     </Text>
-                    
-                    {/* LÓGICA DE ESTOQUE NO BOTÃO */}
                     <Button
                         leftIcon={<Icon as={FiShoppingCart} />}
                         colorScheme={product.stock > 0 ? "blue" : "gray"}

@@ -1,6 +1,4 @@
-// src/pages/AdminUsersPage.js
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, Spinner, Text, Table, Thead, Tbody, Tr, Th, Td,
     TableContainer, IconButton, HStack, Select, useToast, Flex
@@ -40,7 +38,6 @@ const AdminUsersPage = () => {
     };
 
     const handleDelete = (userId) => {
-        // Simples confirmação para evitar exclusão acidental
         if (window.confirm('Tem certeza que deseja excluir este usuário?')) {
             api.delete(`/users/${userId}`)
                 .then(() => {
@@ -85,7 +82,6 @@ const AdminUsersPage = () => {
                                     >
                                         <option value="customer">Cliente</option>
                                         <option value="admin">Admin</option>
-                                        {/* Futuramente, adicione 'editor', 'vendedor', etc. aqui */}
                                     </Select>
                                 </Td>
                                 <Td>

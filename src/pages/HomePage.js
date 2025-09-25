@@ -1,6 +1,4 @@
-// src/pages/HomePage.js
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, Text, Button, Wrap, WrapItem, SimpleGrid, Spinner, Flex, Container
 } from '@chakra-ui/react';
@@ -33,7 +31,6 @@ const HomePage = ({ onAddToCart }) => {
         ? products
         : products.filter(product => product.category === activeCategory);
 
-    // MELHORIA: Spinner de carregamento mais profissional
     if (loading) {
         return (
             <Flex justify="center" align="center" height="60vh">
@@ -44,7 +41,6 @@ const HomePage = ({ onAddToCart }) => {
 
     return (
         <Box>
-            {/* MELHORIA: Seção de "Boas-Vindas" (Hero Section) */}
             <Box bg="blue.50" py={12} mb={10} borderRadius="lg">
                 <Container maxW="container.lg" textAlign="center">
                     <Heading as="h1" size="2xl" color="blue.800" mb={3}>
@@ -55,23 +51,19 @@ const HomePage = ({ onAddToCart }) => {
                     </Text>
                 </Container>
             </Box>
-
-            {/* MELHORIA: Seção de produtos com título e filtros estilizados */}
             <Container maxW="container.xl">
                 <Heading as="h2" size="xl" mb={4} textAlign="center">
                     Nossos Produtos
                 </Heading>
                 <Text textAlign="center" color="gray.600" mb={8}>Navegue por categoria:</Text>
-
-                {/* MELHORIA: Botões de Filtro com o tema azul */}
                 <Wrap spacing={3} justify="center" mb={12}>
                     {categories.map(category => (
                         <WrapItem key={category}>
                             <Button
-                                colorScheme="blue" // Tema azul
+                                colorScheme="blue" 
                                 variant={activeCategory === category ? 'solid' : 'outline'}
                                 onClick={() => setActiveCategory(category)}
-                                borderRadius="full" // Botões arredondados
+                                borderRadius="full"
                                 px={6}
                             >
                                 {category}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, Button, Table, Thead, Tbody, Tr, Th, Td, TableContainer,
     IconButton, HStack, Spinner, Text, Flex, useDisclosure,
@@ -8,7 +8,7 @@ import { AddIcon, EditIcon, DeleteIcon } from '@chakra-ui/icons';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 import api from '../services/api';
-import { logActivity } from '../services/logService'; // Importe o serviço de log
+import  logActivity  from '../services/logService';
 
 const AdminPage = () => {
     const [products, setProducts] = useState([]);
@@ -39,7 +39,6 @@ const AdminPage = () => {
         if (productToDelete) {
             api.delete(`/products/${productToDelete.id}`)
                 .then(() => {
-                    // Registra a atividade de exclusão
                     logActivity(`Produto "${productToDelete.name}" (ID: ${productToDelete.id}) foi excluído.`);
                     fetchProducts();
                 })

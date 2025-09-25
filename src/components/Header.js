@@ -1,6 +1,3 @@
-// src/components/Header.js
-
-import React from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Box, Flex, HStack, Text, Icon, Badge, Button } from '@chakra-ui/react';
 import { FiPackage, FiShoppingCart, FiSettings, FiLogIn, FiLogOut } from 'react-icons/fi';

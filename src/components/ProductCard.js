@@ -1,17 +1,14 @@
-import React from 'react';
 import { Box, Image, Text, Button, Badge, VStack, Heading, Icon } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product, onAddToCart }) => {
-  // Esta função impede que o clique no botão ative o link do card.
   const handleAddToCartClick = (e) => {
-    e.preventDefault(); // Impede a navegação do Link pai.
+    e.preventDefault(); 
     onAddToCart(product);
   };
 
   return (
-    // O card inteiro agora é um link para a página de detalhes do produto.
     <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none' }}>
       <Box
         borderWidth="1px"
@@ -20,7 +17,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         boxShadow="sm"
         transition="all 0.3s"
         _hover={{ boxShadow: 'xl', transform: 'translateY(-5px)' }}
-        height="100%" // Garante que todos os cards na mesma linha tenham a mesma altura.
+        height="100%" 
       >
         <Image 
           src={product.image || `https://placehold.co/600x400?text=${product.name}`} 
@@ -47,7 +44,7 @@ const ProductCard = ({ product, onAddToCart }) => {
             leftIcon={<Icon as={FiShoppingCart} />} 
             colorScheme="blue" 
             variant="solid"
-            onClick={handleAddToCartClick} // Usando a função para evitar a navegação.
+            onClick={handleAddToCartClick}
           >
             Adicionar ao Carrinho
           </Button>

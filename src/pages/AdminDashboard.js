@@ -1,6 +1,3 @@
-// src/pages/AdminDashboard.js
-
-import React from 'react';
 import { Box, Heading, SimpleGrid, Icon, Text, VStack, Flex } from '@chakra-ui/react';
 import { FiBox, FiClipboard, FiUsers, FiFileText } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
@@ -51,7 +48,6 @@ const AdminDashboard = () => {
                     title="Gerenciar Usuários"
                     description="Altere perfis e administre contas."
                 />
-                {/* ESTE É O CARD QUE FALTAVA */}
                 <NavCard
                     to="/admin/logs"
                     icon={FiFileText}

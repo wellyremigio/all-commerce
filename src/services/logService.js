@@ -1,8 +1,6 @@
-// src/services/logService.js
-
 import api from './api';
 
-export const logActivity = (description) => {
+const logActivity = (description) => {
     const user = JSON.parse(localStorage.getItem('user'));
     const userEmail = user ? user.email : 'Sistema';
 
@@ -14,3 +12,5 @@ export const logActivity = (description) => {
     api.post('/logs', newLog)
         .catch(error => console.error("Falha ao registrar log de atividade:", error));
 };
+
+export default logActivity;

@@ -1,17 +1,13 @@
-// src/pages/CartPage.js
-
 import { useState } from "react";
 import {
     Box, Heading, Text, Button, VStack, HStack, Divider, IconButton, Radio, RadioGroup,
-    Input, InputGroup, InputRightElement, useToast, Container, Flex, Image, Icon,
-    Link as ChakraLink
+    Input, InputGroup, InputRightElement, useToast, Container, Flex, Image, Icon
 } from '@chakra-ui/react';
-// CORREÇÃO: Importando os ícones dos lugares corretos
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { FiShoppingCart } from 'react-icons/fi';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
-const CartPage = ({ cartItems, onAddToCart, onRemoveFromCart, onClearCart }) => {
+const CartPage = ({ cartItems, onAddToCart, onRemoveFromCart }) => {
     const [cep, setCep] = useState('');
     const [shippingCost, setShippingCost] = useState(null);
     const [shippingMethod, setShippingMethod] = useState('');

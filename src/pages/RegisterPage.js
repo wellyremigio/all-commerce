@@ -1,6 +1,4 @@
-// src/pages/RegisterPage.js
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     Box, Heading, FormControl, FormLabel, Input, Button, VStack,
     Container, useToast, InputGroup, InputRightElement, Icon, Text

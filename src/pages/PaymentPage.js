@@ -1,13 +1,11 @@
-// src/pages/PaymentPage.js
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
     Box, Heading, VStack, Tabs, TabList, Tab, TabPanels, TabPanel,
     FormControl, FormLabel, Input, HStack, Button, Spinner, Text, Image, Center, Select, useToast,
     Flex, Container, Icon, InputGroup, InputLeftElement, Divider, useClipboard
 } from '@chakra-ui/react';
-import { FiCreditCard, FiUser, FiCalendar, FiLock, FiCopy } from 'react-icons/fi';
+import { FiCreditCard, FiUser, FiLock, FiCopy } from 'react-icons/fi';
 import api from '../services/api';
 
 const PaymentPage = ({ onClearCart }) => {

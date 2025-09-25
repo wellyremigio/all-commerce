@@ -1,6 +1,4 @@
-// src/pages/AdminLogsPage.js
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, Spinner, Text, Table, Thead, Tbody, Tr, Th, Td,
     TableContainer, Flex, Icon, HStack, IconButton

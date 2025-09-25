@@ -21,32 +21,22 @@
   ],
   "products": [
     {
-      "id": "1",
       "name": "Bolsa de Couro Elegante",
-      "price": 299.9,
+      "price": 199.9,
       "category": "Acessórios",
-      "type": "physical",
       "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb6e0e5c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 10,
+      "image": "/images/bolsa.jpeg",
+      "id": "1"
     },
     {
-      "id": "2",
       "name": "Headphone Bluetooth 5.2",
       "price": 349.99,
       "category": "Eletrônicos",
-      "type": "physical",
       "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+      "stock": 2,
       "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "stock": -1
-    },
-    {
-      "id": "4",
-      "name": "Livro: A Arte da Programação",
-      "price": 89.9,
-      "category": "Livros",
-      "type": "physical",
-      "description": "Um guia completo sobre algoritmos e estruturas de dados para desenvolvedores de todos os níveis.",
-      "image": "https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "id": "2"
     },
     {
       "id": "5",
@@ -55,74 +45,55 @@
       "category": "Material de Escritório",
       "type": "physical",
       "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
-      "stock": 30,
-      "image": "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 29,
+      "image": "/images/canetas.jpeg"
     },
     {
-      "id": "6",
       "name": "Tênis de Corrida Ultra Leve",
       "price": 499,
       "category": "Roupas",
-      "type": "physical",
       "description": "Tênis com tecnologia de amortecimento avançada, ideal para treinos longos e competições.",
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 14,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "id": "6"
     },
     {
-      "id": "7",
       "name": "Cafeteira Elétrica Express",
       "price": 249.9,
       "category": "Casa e Cozinha",
-      "type": "physical",
       "description": "Prepara até 30 xícaras de café, com filtro permanente e sistema corta-pingos.",
-      "image": "https://images.unsplash.com/photo-1511920183353-3c9c9b04a299?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 2,
+      "image": "/images/Cafeteria.jpeg",
+      "id": "7"
     },
     {
-      "id": "8",
       "name": "Smartwatch Vitality 3",
       "price": 799,
       "category": "Eletrônicos",
-      "type": "physical",
       "description": "Monitore sua saúde com acompanhamento de batimentos cardíacos, SpO2, sono e mais de 100 modos de esporte.",
-      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 8,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "id": "8"
     },
     {
-      "id": "9",
-      "name": "Ficção Científica Clássica",
-      "price": 59.9,
-      "category": "Livros",
-      "type": "physical",
-      "description": "Coletânea com os melhores contos de ficção científica do século XX. Edição de colecionador.",
-      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "id": "10",
       "name": "Mochila Executiva para Notebook",
       "price": 220,
       "category": "Acessórios",
-      "type": "physical",
       "description": "Compartimento acolchoado para notebooks de até 15.6 polegadas, resistente à água e com portas USB.",
-      "image": "https://images.unsplash.com/photo-1587353112359-a0315a975775?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "id": "0ad3",
-      "name": "Smartphone Moderno",
-      "price": 4220,
-      "category": "Smartphone",
-      "type": "physical",
-      "description": "Smartphone com tela de 6,1, 5G e Câmera de 48MP.",
-      "stock": 2,
-      "image": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "stock": 7,
+      "image": "/images/mochila.jpeg",
+      "id": "10"
     },
     {
       "id": "11",
       "name": "Compiladores: Princípios e Técnicas",
       "price": 89.9,
       "category": "Livros",
-      "stock": 100,
+      "stock": 99,
       "type": "digital",
       "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "description": "Um guia completo sobre compiladores",
-      "image": "https://images.unsplash.com/photo-1524995767968-7b2a5957b182?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "image": "/images/compila.png"
     },
     {
       "id": "203",
@@ -133,16 +104,34 @@
       "type": "digital",
       "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "description": "Terceiro livro de uma das sagas mais famosas do mundo.",
-      "image": "https://images.unsplash.com/photo-1610466024868-c112b9799282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "image": "/images/prisioneiro de azkaban.png"
     },
     {
-      "id": "6d92",
-      "name": "Samsung Galaxy S24+",
-      "price": 4000,
-      "category": "Smartphone",
-      "description": "Smartphone de última geração com câmera tripla e tela infinita.",
-      "stock": 1,
-      "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      "id": "1b53",
+      "name": "Iphone 16",
+      "price": 4.88289,
+      "category": "Eletrônicos",
+      "description": "Com um sistema operacional iOS 18 com tudo que há de mais avançado na tecnologia, câmera de 48MP, tela de 6.1'' e 128GB de armazenamento.",
+      "stock": 9,
+      "image": "/images/iphone1.jpeg"
+    },
+    {
+      "id": "33d4",
+      "name": "Smartphone Samsung Galaxy A26",
+      "price": 1.349,
+      "category": "Eletrônicos",
+      "description": "Eleve sua conectividade com o Smartphone Samsung Galaxy A26 5G 256GB 8GB RAM Câmera 50MP IP67 Tela Super AMOLED 6.7\" Preto.\n\nFeito para durar e atualizado por mais tempo, o Galaxy A26 5G oferece uma experiência duradoura e segura, assegurando até 6 atualizações de sistema operacional Android e até 6 anos de atualizações de Segurança. Registre seus momentos favoritos com a Camêra Tripla Ultra-Wide de até 50MP com edição AI e Selfie de 13MP.\n\nCapture fotos impressionantes e vídeos suaves com (OIS) estabilização óptica de imagem tenha suas fotos e vídeos nítidos e estáveis.\n\nSua tela imersiva de 6.7\" Super AMOLED com Vision Booster, ainda permite que você assista seus conteúdos em cores realistas, e aproveite mais com uma proporção de tela maior.",
+      "stock": 7,
+      "image": "/images/sansung1.jpeg"
+    },
+    {
+      "id": "256f",
+      "name": "Smartphone Motorola Moto G05",
+      "price": 664,
+      "category": "Eletrônicos",
+      "description": "Com o Smartphone Motorola Moto G05 128GB 12GB RAM Boost Câmera 50MP AI Bateria de 5200 mAh Tela 6.7 aproveite a tela de 6,7”, com o maior brilho da categoria no mundo até 1000 nits, oferecendo clareza até sob a luz direta do sol.\n \nO desempenho é potente com até 12GB de RAM Boost inteligente, garantindo uma experiência multitarefa rápida sem travar\n \nA câmera de 50MP com inteligência artificial e night vision automático captura fotos nítidas e retratos vibrantes, mesmo à noite. Com a superbateria de 5200 mah, você tem até 40 horas de uso4.\n \nO design sofisticado em vegan leather, a proteção contra respingos d'água e o vidro corning gorilla glass 3 garantem resistência e estilo. Moto G05. Maior. Mais potente. Mais brilhante.",
+      "stock": 12,
+      "image": "/images/motorola1.jpeg"
     }
   ],
   "orders": [
@@ -185,7 +174,91 @@
       "shippingMethod": "Correios PAC",
       "status": "Processando",
       "userEmail": "usuario1@gmail.com"
+    },
+    {
+      "id": "1758766785889",
+      "date": "2025-09-25T02:19:45.889Z",
+      "items": [
+        {
+          "id": "5",
+          "name": "Kit de Canetas Coloridas",
+          "price": 23,
+          "category": "Material de Escritório",
+          "type": "physical",
+          "description": "Conjunto com 5 canetas de ponta fina em gel, cores diversas, ideal para anotações e desenhos.",
+          "stock": 30,
+          "image": "/images/canetas.jpeg",
+          "quantity": 1
+        },
+        {
+          "name": "Headphone Bluetooth 5.2",
+          "price": 349.99,
+          "category": "Eletrônicos",
+          "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+          "stock": 3,
+          "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "total": 416.6395,
+      "shippingMethod": "Correios PAC",
+      "status": "Processando",
+      "userEmail": "usuario1@gmail.com"
+    },
+    {
+      "id": "1758766828808",
+      "date": "2025-09-25T02:20:28.808Z",
+      "items": [
+        {
+          "id": "11",
+          "name": "Compiladores: Princípios e Técnicas",
+          "price": 89.9,
+          "category": "Livros",
+          "stock": 100,
+          "type": "digital",
+          "downloadLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+          "description": "Um guia completo sobre compiladores",
+          "image": "/images/compila.png",
+          "quantity": 1
+        },
+        {
+          "id": "1b53",
+          "name": "Iphone 16",
+          "price": 4.88289,
+          "category": "Eletrônicos",
+          "description": "Com um sistema operacional iOS 18 com tudo que há de mais avançado na tecnologia, câmera de 48MP, tela de 6.1'' e 128GB de armazenamento.",
+          "stock": 10,
+          "image": "/images/iphone1.jpeg",
+          "quantity": 1
+        }
+      ],
+      "total": 99.5220345,
+      "shippingMethod": "Retirada no Local",
+      "status": "Processando",
+      "userEmail": "usuario1@gmail.com"
     }
   ],
-  "logs": []
+  "logs": [
+    {
+      "id": "ec44",
+      "description": "Produto \"Smartphone Moderno\" (ID: 0ad3) foi excluído. (por admin@allcommerce.com)",
+      "timestamp": "2025-09-25T02:02:24.373Z"
+    },
+    {
+      "id": "12b3",
+      "description": "Produto \"Livro: A Arte da Programação\" (ID: 4) foi excluído. (por admin@allcommerce.com)",
+      "timestamp": "2025-09-25T02:03:39.113Z"
+    },
+    {
+      "id": "621a",
+      "description": "Produto \"Ficção Científica Clássica\" (ID: 9) foi excluído. (por admin@allcommerce.com)",
+      "timestamp": "2025-09-25T02:04:39.150Z"
+    },
+    {
+      "id": "12b7",
+      "description": "Produto \"Samsung Galaxy S24+\" (ID: 6d92) foi excluído. (por admin@allcommerce.com)",
+      "timestamp": "2025-09-25T02:05:01.590Z"
+    }
+  ]
 }

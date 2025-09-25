@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Box, Heading, Text, Button, VStack, HStack, Tag,
     Flex, Image, Divider, Icon, Container, Spinner
