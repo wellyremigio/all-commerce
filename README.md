@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# All Commerce
+Este é um projeto de uma Loja Virtual para Comércio em Geral, desenvolvido para a disciplina Programação para Web I, do curso de Ciência da Computação - UFCG. O objetivo é criar uma plataforma de e-commerce funcional que permita a venda de produtos diversos, tanto físicos quanto digitais, de lojas de uma cidade. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Desenvolvedoras
+Welly Remígio Bezerra
 
-## Available Scripts
+Karyna Vanessa Matias Araújo 
 
-In the project directory, you can run:
 
-### `npm start`
+## Funcionalidades
+A plataforma implementa as seguintes funcionalidades principais:
+- Gestão de Catálogo: Visualização de produtos com filtros dinâmicos por categoria. 
+- Carrinho de Compras: Adição e remoção de produtos, com controle de quantidade. 
+- Checkout Simulado: Um fluxo de checkout simples e responsivo, incluindo cálculo simulado de frete e impostos. 
+- Opções de Pagamento: Interface simulada para pagamentos com Cartão de Crédito e PIX. 
+- Gerenciamento de Produtos (Admin): Painel administrativo para cadastrar, ler, atualizar e excluir produtos. 
+- Gestão de Pedidos:
+  - Painel para o administrador acompanhar os pedidos realizados. 
+  - Área do cliente ("Meus Pedidos") para visualização do histórico de compras.
+- Distribuição Simulada: Lógica para lidar com diferentes métodos de entrega, como retirada no local, e entrega de produtos digitais com link para download. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias Utilizadas
+- Frontend: React
+- UI/Estilização: Chakra UI
+- Backend (Simulado): json-server
+- Comunicação com API: Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Rodar o Projeto?
 
-### `npm test`
+Pré-requisitos
+- Node.js 
+- json-server instalado globalmente (``npm install -g json-server``)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend (API Falsa) - Precisa ser executado em um terminal separado.
 
-### `npm run build`
+Navegue até a pasta raiz do projeto (onde está o db.json)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+``cd .\all-commerce\``
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Inicie o servidor na porta 3001
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+``json-server --watch db.json --port 3001``
 
-### `npm run eject`
+### Frontend - Abra outro terminal
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Navegue até a pasta raiz do projeto (onde está o db.json)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``cd .\all-commerce\``
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Instale todas as dependências
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+``npm install``
 
-## Learn More
+Inicie a aplicação
+``npm start``
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A aplicação será aberta no seu navegador.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Credenciais de Acesso (Simulado)
+- Para entrar como Admin:
+  
+  Email: ``admin@allcommerce.com``
+  
+  Senha: ``admin``
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Para entrar como Cliente:
+  
+  Email: ``cliente@email.com``
 
-### Analyzing the Bundle Size
+  Senha: ``123``
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
