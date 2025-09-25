@@ -25,7 +25,7 @@
       "price": 199.9,
       "category": "Acessórios",
       "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
-      "stock": 10,
+      "stock": 9,
       "image": "/images/bolsa.jpeg",
       "id": "1"
     },
@@ -34,7 +34,7 @@
       "price": 349.99,
       "category": "Eletrônicos",
       "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
-      "stock": 2,
+      "stock": 0,
       "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       "id": "2"
     },
@@ -53,7 +53,7 @@
       "price": 499,
       "category": "Roupas",
       "description": "Tênis com tecnologia de amortecimento avançada, ideal para treinos longos e competições.",
-      "stock": 14,
+      "stock": 13,
       "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       "id": "6"
     },
@@ -80,7 +80,7 @@
       "price": 220,
       "category": "Acessórios",
       "description": "Compartimento acolchoado para notebooks de até 15.6 polegadas, resistente à água e com portas USB.",
-      "stock": 7,
+      "stock": 6,
       "image": "/images/mochila.jpeg",
       "id": "10"
     },
@@ -107,22 +107,22 @@
       "image": "/images/prisioneiro de azkaban.png"
     },
     {
-      "id": "1b53",
       "name": "Iphone 16",
-      "price": 4.88289,
+      "price": 4882,
       "category": "Eletrônicos",
       "description": "Com um sistema operacional iOS 18 com tudo que há de mais avançado na tecnologia, câmera de 48MP, tela de 6.1'' e 128GB de armazenamento.",
       "stock": 9,
-      "image": "/images/iphone1.jpeg"
+      "image": "/images/iphone1.jpeg",
+      "id": "1b53"
     },
     {
-      "id": "33d4",
       "name": "Smartphone Samsung Galaxy A26",
-      "price": 1.349,
+      "price": 1349,
       "category": "Eletrônicos",
       "description": "Eleve sua conectividade com o Smartphone Samsung Galaxy A26 5G 256GB 8GB RAM Câmera 50MP IP67 Tela Super AMOLED 6.7\" Preto.\n\nFeito para durar e atualizado por mais tempo, o Galaxy A26 5G oferece uma experiência duradoura e segura, assegurando até 6 atualizações de sistema operacional Android e até 6 anos de atualizações de Segurança. Registre seus momentos favoritos com a Camêra Tripla Ultra-Wide de até 50MP com edição AI e Selfie de 13MP.\n\nCapture fotos impressionantes e vídeos suaves com (OIS) estabilização óptica de imagem tenha suas fotos e vídeos nítidos e estáveis.\n\nSua tela imersiva de 6.7\" Super AMOLED com Vision Booster, ainda permite que você assista seus conteúdos em cores realistas, e aproveite mais com uma proporção de tela maior.",
       "stock": 7,
-      "image": "/images/sansung1.jpeg"
+      "image": "/images/sansung1.jpeg",
+      "id": "33d4"
     },
     {
       "id": "256f",
@@ -235,6 +235,76 @@
       ],
       "total": 99.5220345,
       "shippingMethod": "Retirada no Local",
+      "status": "Processando",
+      "userEmail": "usuario1@gmail.com"
+    },
+    {
+      "id": "1758768233206",
+      "date": "2025-09-25T02:43:53.206Z",
+      "items": [
+        {
+          "name": "Mochila Executiva para Notebook",
+          "price": 220,
+          "category": "Acessórios",
+          "description": "Compartimento acolchoado para notebooks de até 15.6 polegadas, resistente à água e com portas USB.",
+          "stock": 7,
+          "image": "/images/mochila.jpeg",
+          "id": "10",
+          "quantity": 1
+        },
+        {
+          "name": "Tênis de Corrida Ultra Leve",
+          "price": 499,
+          "category": "Roupas",
+          "description": "Tênis com tecnologia de amortecimento avançada, ideal para treinos longos e competições.",
+          "stock": 14,
+          "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          "id": "6",
+          "quantity": 1
+        },
+        {
+          "name": "Headphone Bluetooth 5.2",
+          "price": 349.99,
+          "category": "Eletrônicos",
+          "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+          "stock": 2,
+          "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "total": 1147.4395,
+      "shippingMethod": "Correios PAC",
+      "status": "Processando",
+      "userEmail": "usuario1@gmail.com"
+    },
+    {
+      "id": "1758768371943",
+      "date": "2025-09-25T02:46:11.943Z",
+      "items": [
+        {
+          "name": "Bolsa de Couro Elegante",
+          "price": 199.9,
+          "category": "Acessórios",
+          "description": "Bolsa de couro genuíno, perfeita para o dia a dia e ocasiões especiais, com múltiplos compartimentos.",
+          "stock": 10,
+          "image": "/images/bolsa.jpeg",
+          "id": "1",
+          "quantity": 1
+        },
+        {
+          "name": "Headphone Bluetooth 5.2",
+          "price": 349.99,
+          "category": "Eletrônicos",
+          "description": "Fone de ouvido sem fio com cancelamento de ruído ativo, até 40 horas de bateria e microfone embutido.",
+          "stock": 1,
+          "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "total": 602.3845,
+      "shippingMethod": "Correios PAC",
       "status": "Processando",
       "userEmail": "usuario1@gmail.com"
     }
